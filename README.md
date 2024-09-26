@@ -3,7 +3,7 @@
 ## Visão Geral
 Este projeto tem como objetivo criar uma plataforma educacional para integrar tecnologia no ambiente escolar, proporcionando ferramentas personalizadas para professores e alunos, como planos de aula adaptáveis, acompanhamento de progresso e avaliações adaptativas.
 
-## Organização por Prioridade, Sprints e Rank de Prioridade
+## Sprint 1- Backlog Do Produto
 
 | **Rank** | **Funcionalidade**                | **User Story (US)**                                                                                                                                                              | **Prioridade** | **Sprint** |
 |------------|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------------|
