@@ -5,7 +5,7 @@ Este projeto tem como objetivo criar uma plataforma educacional para integrar te
 
 ## Sprint 1- Backlog Do Produto
 
-| **Rank** | **Funcionalidade**                | **User Story (US)**                                                                                                                                                              | **Prioridade** | **Sprint** |
+| **Rank** | **Funcionalidade**                | **(US)**                                                                                                                                                              | **Prioridade** | **Sprint** |
 |------------|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------------|
 |  #1   | Plano de Aula Personalizado       | Como professor, eu quero criar e editar planos de aula personalizados, para que eu possa adaptar o conteúdo às necessidades específicas dos meus alunos.                          | Alta           | 1                      |
 |  #2  | Biblioteca de Recursos Educacionais | Como professor, eu quero acessar uma biblioteca de recursos educacionais interativos, para que eu possa encontrar rapidamente materiais adequados ao meu plano de aula e aos meus alunos. | Alta           | 1                     |
