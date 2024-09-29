@@ -1,26 +1,32 @@
 import { Request, Response } from "express";
-import { authService } from "../services/authService";
-class authController {
+import { AuthService } from "../services/AuthService"; // Nome da classe corrigido
+
+class AuthController {
     async loginUser(req: Request, res: Response) {
         try {
-            const { email, password_hash } = req.body;
-            const authServiceInstace = new authService();
-            const { token, user } = await authServiceInstace.login(email, password_hash);
+            // Obtém o email e a senha do corpo da requisição
+            const { email, password } = req.body; // Alterado para 'password', você normalmente não envia o hash diretamente
 
+            const authServiceInstance = new AuthService(); // Nome da classe corrigido
+            const { token, user } = await authServiceInstance.login(email, password); // Envia a senha e não o hash
+
+            // Responde com sucesso
             return res.json({
-                message: "Succesfully login",
+                message: "Successfully logged in", // Correção na mensagem
                 token,
                 user: {
-                    id: user.role,
+                    id: user.user_id,
                     name: user.name,
                     email: user.email,
                 },
             });
-        }catch(error) {
-            if(error instanceof Error) {
-                return res.status(400).json({  message: error.message })
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
             }
-            return res.status(400).json({ message: "Error" })
+            return res.status(400).json({ message: "Error" });
         }
     }
 }
+
+export default new AuthController(); // Exportando instância correta
