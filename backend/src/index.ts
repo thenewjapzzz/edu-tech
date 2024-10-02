@@ -1,11 +1,13 @@
 import "reflect-metadata";
 import express from "express";
 import AppDataSource from "./config/database";
-import { User } from "./models/UserModel";
 import router from "./router/UserRoutes";
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+
+app.use(cors())
 
 const PORT = 3000;
 

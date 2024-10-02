@@ -1,51 +1,54 @@
 import { Request, Response, NextFunction } from "express";
-import jwt from 'jsonwebtoken';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-interface JwtPayload {
+interface CustomJwtPayload extends JwtPayload {
     id: number;
     role: 'teacher' | 'student';
 }
 
 declare module 'express-serve-static-core' {
     export interface Request {
-        user?: JwtPayload;
+        user?: CustomJwtPayload;
     }
 }
 
 // Middleware de verificação de token JWT
-export const verifyToken = (req: Request, res: Response, next: NextFunction) => {
+export const verifyToken = (req: Request, res: Response, next: NextFunction): void => {
     const authHeader = req.headers['authorization'];
 
-    if(!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(403).send("A token is required for authenticattion");
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        res.status(403).send("A token is required for authentication");
+        return;
     }
 
     const token = authHeader.split(' ')[1];
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
-        req.user = decoded as JwtPayload;
+        req.user = decoded as CustomJwtPayload;
         next();
-    }catch (error) {
-        return res.status(401).send("Invalid token");
+    } catch (error) {
+        res.status(401).send("Invalid token");
     }
 };
 
-// Midleware para verificar se o usuário é 'teacher'
-export const verifyTeacher = (req: Request, res: Response, next: NextFunction) => {
-    if(req.user?.role !== "teacher") {
-        return res.status(401).json({ message: "Restrict access, only for teacher" });
+// Middleware para verificar se o usuário é 'teacher'
+export const verifyTeacher = (req: Request, res: Response, next: NextFunction): void => {
+    if (req.user?.role !== "teacher") {
+        res.status(401).json({ message: "Restricted access, only for teachers" });
+        return;
     }
     next();
 };
 
 // Middleware para verificar se o usuário é 'student'
-export const verifyStudent = (req: Request, res: Response, next: NextFunction) => {
-    if(req.user?.role !== 'student') {
-        return res.status(401).json({ messsage: "Restrict access, only for students" })
+export const verifyStudent = (req: Request, res: Response, next: NextFunction): void => {
+    if (req.user?.role !== 'student') {
+        res.status(401).json({ message: "Restricted access, only for students" });
+        return;
     }
     next();
-}
+};

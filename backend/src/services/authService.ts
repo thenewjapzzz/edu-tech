@@ -19,18 +19,22 @@ export class AuthService {
       where: { email },
     });
     if (!user) {
+      console.log("Usuário não encontrado com o email:", email);
       throw new Error("User not found");
     }
 
+    console.log("Usuário encontradao:", user.email)
+
     // Verifica se a senha está correta
     const isPasswordValid = await bcrypt.compare(password, user.password_hash);
+    console.log("Validação da senha:", isPasswordValid)
     if (!isPasswordValid) {
       throw new Error("Credentials invalid");
     }
 
     // Gera o token
     const token = jwt.sign(
-      { userId: user.user_id, email: user.email },
+      { userId: user.user_id, email: user.email, role: user.role },
       process.env.JWT_SECRET as string,
       {
         expiresIn: "1h",

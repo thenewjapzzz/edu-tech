@@ -55,6 +55,24 @@
     margin-bottom: 60px;
 }
 
+.password_container {
+    position: relative;
+}
+
+.password_container input {
+    width: 100%; 
+    padding-right: 40px; 
+}
+
+.password_icon {
+    position: absolute; 
+    right: 30px; 
+    top: 40%; 
+    transform: translateY(-50%); 
+    cursor: pointer; 
+    color: #aaa;
+    z-index: 1; 
+}
 
 form {
     display: flex;
@@ -64,8 +82,8 @@ form {
 
 input {
     margin-bottom: 1rem;
-    padding: 0.75rem;
-    font-size: 16px;
+    padding: 1rem;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
@@ -81,5 +99,27 @@ input {
     cursor: pointer;
     margin-top: 40px;
     transition: background-color 0.3s ease;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #09f;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error_message {
+    color: red;
+    margin: 10px 0;
+    font-size: 14px;
 }
 

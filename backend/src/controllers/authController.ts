@@ -12,12 +12,13 @@ class AuthController {
 
             // Responde com sucesso
             return res.json({
-                message: "Successfully logged in", // Correção na mensagem
+                message: "Successfully logged in",
                 token,
                 user: {
                     id: user.user_id,
                     name: user.name,
                     email: user.email,
+                    role: user.role
                 },
             });
         } catch (error) {
@@ -29,4 +30,4 @@ class AuthController {
     }
 }
 
-export default new AuthController(); // Exportando instância correta
+export default new AuthController(); 
