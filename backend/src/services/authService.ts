@@ -2,9 +2,7 @@ import { DataSource } from "typeorm";
 import { User } from "../models/UserModel";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-
-// Certifique-se de importar sua instância DataSource corretamente
-import AppDataSource from "../config/database"; // ajuste o caminho conforme necessário
+import AppDataSource from "../config/database";
 
 export class AuthService {
   // Use o DataSource como uma propriedade

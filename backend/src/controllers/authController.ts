@@ -5,7 +5,7 @@ class AuthController {
     async loginUser(req: Request, res: Response) {
         try {
             // Obtém o email e a senha do corpo da requisição
-            const { email, password } = req.body; // Alterado para 'password', você normalmente não envia o hash diretamente
+            const { email, password } = req.body; 
 
             const authServiceInstance = new AuthService(); // Nome da classe corrigido
             const { token, user } = await authServiceInstance.login(email, password); // Envia a senha e não o hash
