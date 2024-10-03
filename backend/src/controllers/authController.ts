@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AuthService } from "../services/AuthService"; // Nome da classe corrigido
+import { AuthService } from "../services/AuthService";
 
 class AuthController {
     async loginUser(req: Request, res: Response) {
@@ -7,8 +7,8 @@ class AuthController {
             // Obtém o email e a senha do corpo da requisição
             const { email, password } = req.body; 
 
-            const authServiceInstance = new AuthService(); // Nome da classe corrigido
-            const { token, user } = await authServiceInstance.login(email, password); // Envia a senha e não o hash
+            const authServiceInstance = new AuthService(); 
+            const { token, user } = await authServiceInstance.login(email, password); 
 
             // Responde com sucesso
             return res.json({

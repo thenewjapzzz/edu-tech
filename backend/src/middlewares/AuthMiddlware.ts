@@ -24,11 +24,11 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction): vo
         return;
     }
 
-    const token = authHeader.split(' ')[1];
+    const token = authHeader.split(' ')[1]; // Extrai o token do cabeçalho
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
-        req.user = decoded as CustomJwtPayload;
+        req.user = decoded as CustomJwtPayload; // Passa a requisição se o token for válido
         next();
     } catch (error) {
         res.status(401).send("Invalid token");

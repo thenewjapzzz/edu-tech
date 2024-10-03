@@ -7,9 +7,9 @@ export class LessonPlanService {
     private lessonPlanRepository = AppDataSource.getRepository(LessonPlan)
     
     // Método para criar LessonPlan
-    async createLessonPlan(teacher_id: number, title: string, description: string) {
+    async createLessonPlan(teacherId: number, title: string, description: string) {
         const lessonPlan = this.lessonPlanRepository.create({
-            teacher: { user_id: teacher_id }, // Relacionamento entre LessonPLan e User
+            teacher: { user_id: teacherId }, // Relacionamento entre LessonPLan e User
             title,
             description,
         });
