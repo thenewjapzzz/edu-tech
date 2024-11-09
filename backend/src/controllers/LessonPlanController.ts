@@ -35,12 +35,17 @@ export class LessonPlanController {
     async deleteLessonPlan(req: Request, res: Response): Promise<void> {
         try {
             const { id } = req.params;
-            await this.lessonPlanService.deleteLessonPlan(parseInt(id));
-            res.json({ message: "Lesson plan deleted successfully", })
-            res.status(204).send();
+            const parseId = parseInt(id);
+    
+            if (isNaN(parseId)) {
+                res.status(400).json({ message: "Invalid lesson plan ID" });
+            }
+    
+            await this.lessonPlanService.deleteLessonPlan(parseId);
+            res.json({ message: "Lesson plan deleted successfully" });
         } catch (error) {
-            console.log("Error delecting lesson plan:", error);
-            res.status(400).json({ message: (error as Error).message });
+            console.log("Error deleting lesson plan:", error);
+            res.status(500).json({ message: (error as Error).message });
         }
     }
 
@@ -48,18 +53,24 @@ export class LessonPlanController {
         try {
             const teacherId = req.user?.id ?? 1;
             const lessonPlan = await this.lessonPlanService.getLessonPlansByTeacher(teacherId);
-            if(lessonPlan.length === 0) {
-                res.status(404).json({ message: "No lessons plans found for this teacher" })
-            }else {
-                res.json({ message: "Lesson plans retrieved successfully" })
+    
+            if (lessonPlan.length === 0) {
+                // Retorne uma resposta 404 se nenhum plano de aula for encontrado
+                res.status(404).json({ message: "No lesson plans found for this teacher" });
+            } else {
+                // Se os planos de aula forem encontrados, retorne-os
+                res.status(200).json({
+                    message: "Lesson plans retrieved successfully",
+                    lessonPlans: lessonPlan // Inclua os planos de aula na resposta
+                });
             }
-            res.json(lessonPlan);
         } catch (error) {
-            console.log("Error fetching lesson plan:", error)
+            console.log("Error fetching lesson plan:", error);
             res.status(400).json({ message: (error as Error).message });
         }
     }
-
+    
+    
     async getLessonPlanId(req: Request, res: Response): Promise<void> {
         try {
             const { id } = req.params;

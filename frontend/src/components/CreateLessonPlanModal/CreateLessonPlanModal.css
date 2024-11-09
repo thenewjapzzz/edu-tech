@@ -1,0 +1,48 @@
+.create_lesson_plan {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(0,  0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.content_create {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 50%;
+    max-width: 600px;
+}
+
+.content_create h2 {
+    margin-bottom: 10px;
+}
+
+.lesson_plan_button_create_modal,
+.lesson_plan_button_close_modal {
+    width: 100px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #2d7aaf;
+    border-radius: 8px;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+.lesson_plan_button_create_modal,
+.lesson_plan_button_close_modal :hover{
+    background-color: #3189c4;
+}
+
+.button_container_modal_lesson {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}

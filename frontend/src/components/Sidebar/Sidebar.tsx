@@ -31,7 +31,7 @@ function Sidebar() {
             </div>
 
             <ul className='menu'>
-                <li className={getMenuItemClass('/dashboard')} onClick={() => navigate('/dashboard')}>
+                <li className={getMenuItemClass('/dashboard-teacher')} onClick={() => navigate('/dashboard-teacher')}>
                     <FaTachometerAlt />
                     <span className='dashboard'>Dashboard</span>
                 </li>

@@ -1,0 +1,20 @@
+.lesson_plan_screen {
+    display: flex;
+}
+.lesson_plan_list {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.lesson_plan_initial {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.lesson_plan_initial button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}

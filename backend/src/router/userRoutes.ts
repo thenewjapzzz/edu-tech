@@ -4,7 +4,7 @@ import {
   verifyTeacher,
   verifyStudent,
 } from "../middlewares/AuthMiddlware";
-import AuthController from "../controllers/AuthController";
+import AuthController from "../controllers/authController";
 
 const router = Router();
 

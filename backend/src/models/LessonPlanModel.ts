@@ -4,7 +4,6 @@ import {
   Column,
   ManyToOne,
   JoinColumn,
-  PrimaryColumn,
 } from "typeorm";
 import { User } from "./UserModel";
 

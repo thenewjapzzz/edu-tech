@@ -4,7 +4,7 @@ import "./index.css";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import ModalError from "../../components/ModalError/ModalError";
+import ModalError from "../../components/ModalLoginError/ModalError";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ export default function Login() {
 
       // Redireciona dependendo do papel do usuário
       if (user.role === "teacher") {
-        navigate("/teacher");
+        navigate("/dashboard-teacher");
       } else if (user.role === "student") {
         navigate("/student");
       }
