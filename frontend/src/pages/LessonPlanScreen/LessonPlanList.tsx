@@ -28,33 +28,60 @@ const LessonPlanList = () => {
     }, []);
 
     const handleCheckboxChange = (id: number) => {
-        setSelectedPlans((prev) => ({
-            ...prev,
-            [id]: !prev[id],
-        }));
+        setSelectedPlans((prev) => {
+            // Garante que apenas o plano clicado seja atualizado
+            const updated = {
+                ...prev,
+                [id]: !prev[id],
+            };
+            return updated;
+        });
     };
-
+    
+    const handleAddNewPlan = async (newPlan: { title: string, description: string}) => {
+        try {
+            const response = axios.post(`http://localhost:3000/lesson-plan`, newPlan, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    'Content-Type': 'application/json',
+                }
+            })
+            setLessonPlans((prevPlans) => [...prevPlans, response.data.lessonPlan]);
+            handleCloseModal()
+        }catch (error) {
+            console.error("Error adding lesson plan", error)
+        }
+    }
+ 
     const handleDelete = async () => {
         const selectedIds = Object.keys(selectedPlans)
             .filter(id => selectedPlans[Number(id)])
             .map(id => Number(id));
-        
-            try  {
-                for (const id of selectedIds) {
-                    await axios.delete(`http://localhost:3000/lesson-plan/${id}`, {
-                        headers: {
-                            'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                        },
-                    });
-                }
-                const updatedPlans = lessonPlans.filter(plan => !selectedPlans[plan.id]);
-                setLessonPlans(updatedPlans);
-                setSelectedPlans({});
-            }catch (error) {
-                console.log("Error deleting lesson plan", error)
+    
+        if (selectedIds.length === 0) {
+            alert("Selecione pelo menos um plano para deletar.");
+            return;
+        }
+    
+        const confirmDelete = window.confirm("Tem certeza que deseja excluir os planos selecionados?");
+        if (!confirmDelete) return;
+    
+        try {
+            for (const id of selectedIds) {
+                await axios.delete(`http://localhost:3000/lesson-plan/${id}`, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    },
+                });
             }
+            const updatedPlans = lessonPlans.filter(plan => !selectedPlans[plan.id]);
+            setLessonPlans(updatedPlans);
+            setSelectedPlans({});
+        } catch (error) {
+            console.error("Error deleting lesson plans:", error);
+        }
     };
-
+    
     const handleEdit = () => {
         const selectedTitles = lessonPlans
             .filter(plan => selectedPlans[plan.id])
@@ -69,11 +96,7 @@ const LessonPlanList = () => {
     const handleCloseModal = () => {
         setOpenModal(false);
     };
-
-    const handleAddNewPlan = (newPlan: { title: string, description: string }) => {
-        setLessonPlans((prevPlans) => [...prevPlans, { ...newPlan, id: Date.now() }]);
-        handleCloseModal();
-    };
+ 
 
     return (
         <div className="plan_list_content">
@@ -120,6 +143,7 @@ const LessonPlanList = () => {
                                 <td>{plan.description}</td>
                             </tr>
                         ))
+                        
                     )}
                 </tbody>
             </table>
