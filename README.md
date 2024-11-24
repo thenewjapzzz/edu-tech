@@ -16,3 +16,31 @@ Este projeto tem como objetivo criar uma plataforma educacional para integrar te
 
 ## Sprint 2- Protótipo no Figma
 https://www.figma.com/design/1k5RPFfLj7tBpW5tcORFlQ/EduTech?node-id=0-1&node-type=canvas&t=GMp1cyOI0180C02T-0
+
+## Sprint 3- Biblioeca de Recursos Educacionais
+A Sprint 3 tem como objetivo permitir que os professores acessem e utilizem uma biblioteca de recursos educacionais interativos. Isso vai ajudar os educadores a personalizar seus planos de aula e fornecer materiais complementares adequados às necessidades dos alunos.
+
+### Funcionalidades
+
+1. **Acesso à Biblioteca**
+   - **Descrição**: Permite ao professor acessar a biblioteca de recursos educacionais que inclui vídeos, artigos, quizzes e outros materiais.
+   - **Objetivo**: Oferecer ao professor uma variedade de recursos que ele pode utilizar de acordo com o conteúdo de suas aulas.
+
+2. **Pesquisa e Filtros**
+   - **Descrição**: O professor pode pesquisar recursos por tipo (vídeos, textos, quizzes) e filtrar por categorias, como assunto ou nível de dificuldade.
+   - **Objetivo**: Facilitar a busca por materiais específicos que atendam às necessidades do plano de aula.
+
+3. **Adição de Recursos ao Plano de Aula**
+   - **Descrição**: Permite ao professor adicionar recursos diretamente ao seu plano de aula.
+   - **Objetivo**: Integrar facilmente os materiais da biblioteca ao conteúdo do plano de aula.
+
+4. **Classificação e Feedback**
+   - **Descrição**: Os professores podem classificar os recursos educacionais e visualizar feedback dos alunos sobre sua eficácia.
+   - **Objetivo**: Melhorar a seleção de recursos com base na experiência dos alunos.
+
+5. **Interface Intuitiva**
+   - **Descrição**: A biblioteca tem uma interface fácil de usar, com navegação clara e organizada.
+   - **Objetivo**: Proporcionar uma experiência de usuário sem fricções, garantindo que os professores possam acessar rapidamente os recursos necessários.
+
+## Sprint 4- PLano de Aula Personalizado
+- Permite ao professor cadastrar, ver, editar e excluir plano de aula
