@@ -14,4 +14,5 @@ Este projeto tem como objetivo criar uma plataforma educacional para integrar te
 | #5   | Comunicação e Colaboração         | Como aluno, eu quero enviar mensagens aos meus professores e colegas, para que eu possa tirar dúvidas e colaborar em projetos escolares.                                           | Média          | 3                     |
 | #6   | Capacitação de Professores        | Como professor, eu quero acessar módulos de treinamento sobre o uso de tecnologia na sala de aula, para que eu possa melhorar minhas habilidades e aplicar essas tecnologias de forma eficaz. | Média          | 3                     |
 
-
+## Sprint 2- Protótipo no Figma
+https://www.figma.com/design/1k5RPFfLj7tBpW5tcORFlQ/EduTech?node-id=0-1&node-type=canvas&t=GMp1cyOI0180C02T-0
