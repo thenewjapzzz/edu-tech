@@ -26,21 +26,31 @@ A Sprint 3 tem como objetivo permitir que os professores acessem e utilizem uma 
    - **Descrição**: Permite ao professor acessar a biblioteca de recursos educacionais que inclui vídeos, artigos, quizzes e outros materiais.
    - **Objetivo**: Oferecer ao professor uma variedade de recursos que ele pode utilizar de acordo com o conteúdo de suas aulas.
 
-2. **Pesquisa e Filtros**
-   - **Descrição**: O professor pode pesquisar recursos por tipo (vídeos, textos, quizzes) e filtrar por categorias, como assunto ou nível de dificuldade.
-   - **Objetivo**: Facilitar a busca por materiais específicos que atendam às necessidades do plano de aula.
-
-3. **Adição de Recursos ao Plano de Aula**
-   - **Descrição**: Permite ao professor adicionar recursos diretamente ao seu plano de aula.
-   - **Objetivo**: Integrar facilmente os materiais da biblioteca ao conteúdo do plano de aula.
-
-4. **Classificação e Feedback**
-   - **Descrição**: Os professores podem classificar os recursos educacionais e visualizar feedback dos alunos sobre sua eficácia.
-   - **Objetivo**: Melhorar a seleção de recursos com base na experiência dos alunos.
-
-5. **Interface Intuitiva**
+2. **Interface Intuitiva**
    - **Descrição**: A biblioteca tem uma interface fácil de usar, com navegação clara e organizada.
    - **Objetivo**: Proporcionar uma experiência de usuário sem fricções, garantindo que os professores possam acessar rapidamente os recursos necessários.
 
-## Sprint 4- PLano de Aula Personalizado
-- Permite ao professor cadastrar, ver, editar e excluir plano de aula
+## Sprint 4- Planos de Aula Personalizado
+A Sprint 4 visa implementar funcionalidades para que os professores possam criar, editar, visualizar e excluir planos de aula personalizados. O objetivo é permitir que os professores adaptem seus conteúdos de acordo com as necessidades dos alunos.
+
+### Funcionalidades
+
+1. **Cadastro de Plano de Aula**
+   - **Descrição**: O professor pode criar um novo plano de aula, definindo o conteúdo, objetivos, atividades e recursos a serem usados.
+   - **Objetivo**: Personalizar o plano de aula conforme a necessidade da turma.
+
+2. **Edição de Plano de Aula**
+   - **Descrição**: O professor pode editar planos de aula previamente criados, fazendo ajustes em conteúdos ou atividades.
+   - **Objetivo**: Permitir alterações rápidas no plano de aula para refletir mudanças ou melhorias no conteúdo.
+
+3. **Visualização de Planos de Aula**
+   - **Descrição**: O professor pode visualizar seus planos de aula criados, com todos os detalhes sobre os objetivos, atividades e materiais a serem utilizados.
+   - **Objetivo**: Oferecer uma visão clara e organizada dos planos de aula para facilitar o acompanhamento e a execução.
+
+4. **Exclusão de Plano de Aula**
+   - **Descrição**: O professor pode excluir planos de aula antigos ou desnecessários.
+   - **Objetivo**: Garantir que o professor tenha controle sobre os planos de aula que ele cria.
+
+5. **Interface de Usuário**
+   - **Descrição**: A interface permite que o professor interaja de forma simples com o sistema, criando e modificando planos de aula facilmente.
+   - **Objetivo**: Proporcionar uma experiência intuitiva e eficiente na criação e edição de planos de aula.
