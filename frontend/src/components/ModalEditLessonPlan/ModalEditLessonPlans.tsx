@@ -1,20 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './ModalEditLessonPlan.css';
 
 export const ModalEditLessonPlan = ({ onClose, onEdit, lessonPlan }) => {
-    const [title, setTitle] = useState(lessonPlan?.title || "");
-    const [description, setDescription] = useState(lessonPlan?.description || "");
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
 
+    // Atualiza o estado sempre que lessonPlan mudar
+    useEffect(() => {
+        if (lessonPlan) {
+            setTitle(lessonPlan.title || "");
+            setDescription(lessonPlan.description || "");
+        }
+    }, [lessonPlan]);
+
+    // Verifica se a função onEdit está definida antes de chamar
     const handleEditClick = (e) => {
         e.preventDefault();
 
         if (title && description) {
+            // Verifica se o lessonPlan está definido antes de passar os dados
             onEdit({ ...lessonPlan, title, description });
             onClose();
         } else {
             alert("Preencha todos os campos");
         }
     };
+
+    // Se lessonPlan não estiver disponível, renderiza um conteúdo vazio ou um placeholder
+    if (!lessonPlan) return null;
 
     return (
         <div className="edit_lesson_plan">

@@ -27,27 +27,27 @@
 .lesson_plan_button_save_modal {
     width: 100px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 14px;
     border: none;
     background-color: #2d7aaf;
     border-radius: 4px;
     padding: 10px 16px;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .lesson_plan_button_close_modal {
     width: 100px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 14px;
     border: none;
     background-color: #2d7aaf;
     border-radius: 4px;
     padding: 10px 16px;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 

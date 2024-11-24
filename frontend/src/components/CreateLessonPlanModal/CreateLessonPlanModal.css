@@ -27,26 +27,26 @@
 .lesson_plan_button_create_modal {
     width: 100px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 14px;
     border: none;
     background-color: #2d7aaf;
     border-radius: 4px;
     padding: 10px 1px;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .lesson_plan_button_close_modal {
     width: 100px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 14px;
     border: none;
     background-color: #2d7aaf;
     border-radius: 4px;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .button_container_modal_lesson {
