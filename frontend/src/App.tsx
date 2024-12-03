@@ -18,6 +18,7 @@ import Aula8SistemasLineares from './pages/BibliotecaScreen/Matematica1/Aula8';
 import Aula9FuncoesAfins from './pages/BibliotecaScreen/Matematica1/Aula9';
 import Aula10ProgressaoAritmetica from './pages/BibliotecaScreen/Matematica1/Aula10';
 import DashboardPage from './pages/DashboardTeacher/DashboardPage';
+import ProgressPage from './pages/Progress/ProgressPage';
 
 function App() {
   return (
@@ -90,6 +91,11 @@ function App() {
               </ProtectedRoute>
             } 
           />
+          <Route 
+          path='/progresso'
+          element={<ProgressPage />}
+          >
+          </Route>
         </Routes>
       </Router>
     </AppProvider>

@@ -1,0 +1,128 @@
+/* General Layout */
+.progress-screen {
+    display: flex;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 240px; /* Make space for the Sidebar */
+  }
+  
+  .progress-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .loading-text {
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Student Cards Section */
+  .students-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .student-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .student-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .student-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .progress-bar {
+    background-color: #ddd;
+    border-radius: 8px;
+    height: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+  }
+  
+  .progress {
+    background-color: #65a281;
+    height: 100%;
+    transition: width 0.3s ease;
+  }
+  
+  .progress-info {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .progress-text {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .tasks-completed {
+    font-weight: normal;
+  }
+  
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100%;
+    background-color: #2f3b52;
+    padding-top: 20px;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .sidebar-item {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .sidebar .sidebar-item:hover {
+    background-color: #1d2a38;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .progress-screen {
+      flex-direction: column;
+    }
+    
+    .main-content {
+      margin-left: 0;
+    }
+    
+    .student-card {
+      padding: 15px;
+    }
+    
+    .progress-title {
+      font-size: 20px;
+    }
+    
+    .loading-text {
+      font-size: 14px;
+    }
+  }
+  
